@@ -1,5 +1,7 @@
 # fs-array [![Build Status](https://travis-ci.org/nampdn/fs-array.svg?branch=master)](https://travis-ci.org/nampdn/fs-array) [![codecov](https://codecov.io/gh/nampdn/fs-array/badge.svg?branch=master)](https://codecov.io/gh/nampdn/fs-array?branch=master)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/write-for-CHRIST/fs-array.svg)](https://greenkeeper.io/)
+
 > File system fs with array operation and Promise support.
 
 
