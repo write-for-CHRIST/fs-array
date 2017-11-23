@@ -1,0 +1,45 @@
+{
+  "name": "@write-for-christ/fs-array",
+  "version": "0.0.0",
+  "description": "File system fs with array operation and Promise support.",
+  "license": "MIT",
+  "repository": "nampdn/fs-array",
+  "author": {
+    "name": "nampdn",
+    "email": "nampdn@protonmail.com",
+    "url": "http://writeforchrist.org"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && nyc ava --verbose"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "is-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "codecov": "^2.2.0",
+    "nyc": "^11.0.0",
+    "xo": "^0.18.2"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "xo": {
+    "space": true,
+    "ignores": [
+      "wallaby.js"
+    ]
+  }
+}
