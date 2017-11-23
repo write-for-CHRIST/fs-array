@@ -19,8 +19,10 @@
     "test": "xo && nyc ava --verbose",
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular"
   },
+  "main": "src/index.js",
   "files": [
-    "src/index.js"
+    "src/index.js",
+    "src/fs-read-array.js"
   ],
   "keywords": [
     "fs",
