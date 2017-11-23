@@ -16,14 +16,16 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && nyc ava --verbose",
+    "test": "xo && tsc --project types && nyc ava --verbose",
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular"
   },
   "main": "src/index.js",
   "files": [
     "src/index.js",
-    "src/fs-read-array.js"
+    "src/fs-read-array.js",
+    "types/index.d.ts"
   ],
+  "types": "types/index.d.ts",
   "keywords": [
     "fs",
     "array",
@@ -38,6 +40,7 @@
     "codecov": "^2.2.0",
     "cz-conventional-changelog": "^2.1.0",
     "nyc": "^11.0.0",
+    "typescript": "^2.6.1",
     "xo": "^0.18.2"
   },
   "config": {
