@@ -1,6 +1,6 @@
 {
   "name": "@write-for-christ/fs-array",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "File system fs with array operation and Promise support.",
   "license": "MIT",
   "repository": "nampdn/fs-array",
@@ -8,6 +8,9 @@
     "name": "nampdn",
     "email": "nampdn@protonmail.com",
     "url": "http://writeforchrist.org"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "engines": {
     "node": ">=4"
