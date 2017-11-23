@@ -14,11 +14,17 @@
   },
   "scripts": {
     "test": "xo && nyc ava --verbose",
-    "changelog":
-      "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular"
+    "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular"
   },
-  "files": ["src/index.js"],
-  "keywords": ["fs", "array", "promise", "callback"],
+  "files": [
+    "src/index.js"
+  ],
+  "keywords": [
+    "fs",
+    "array",
+    "promise",
+    "callback"
+  ],
   "dependencies": {
     "is-array": "^1.0.1"
   },
@@ -35,10 +41,15 @@
     }
   },
   "nyc": {
-    "reporter": ["lcov", "text"]
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   },
   "xo": {
     "space": true,
-    "ignores": ["wallaby.js"]
+    "ignores": [
+      "wallaby.js"
+    ]
   }
 }
