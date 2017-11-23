@@ -1,7 +1,6 @@
-# fs-array [![Build Status](https://travis-ci.org/nampdn/fs-array.svg?branch=master)](https://travis-ci.org/nampdn/fs-array) [![codecov](https://codecov.io/gh/nampdn/fs-array/badge.svg?branch=master)](https://codecov.io/gh/nampdn/fs-array?branch=master)
+# fs-array [![Build Status](https://travis-ci.org/write-for-christ/fs-array.svg?branch=master)](https://travis-ci.org/write-for-christ/fs-array) [![codecov](https://codecov.io/gh/write-for-christ/fs-array/badge.svg?branch=master)](https://codecov.io/gh/write-for-christ/fs-array?branch=master)
 
 > File system fs with array operation and Promise support.
-
 
 ## Install
 
@@ -9,37 +8,48 @@
 $ npm install @write-for-christ/fs-array
 ```
 
-
 ## Usage
 
 ```js
 const fsArray = require('@write-for-christ/fs-array');
 
-fsArray('unicorns');
-//=> 'unicorns & rainbows'
-```
+// Promise way
+fsArray
+  .readArray(['/path/to/file1.json', '/path/to/file2.json'])
+  .then(contents => {
+    console.log(contents.length); //=> 2
+  })
+  .catch(err => console.error(err));
 
+// Callback way
+fsArray.readArray(
+  ['/path/to/file1.json', '/path/to/file2.json'],
+  (err, contents) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(contents.length); //=> 2
+    }
+  }
+);
+```
 
 ## API
 
-### fsArray(input, [options])
+### readArray(fileList, [callback])
 
-#### input
+#### fileList
 
-Type: `string`
+Type: `Array<string>`
 
-Lorem ipsum.
+List of absolute files path to read.
 
-#### options
+#### callback
 
-##### foo
+Type: `Function`
 
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
-
+Callback take first param as `error`, the second is `contents`
 
 ## License
 
-MIT © [nampdn](http://writeforchrist.org)
+MIT © [write-for-christ](http://writeforchrist.org)
