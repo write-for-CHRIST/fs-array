@@ -1,4 +1,4 @@
-# fs-array [![Build Status](https://travis-ci.org/write-for-christ/fs-array.svg?branch=master)](https://travis-ci.org/write-for-christ/fs-array) [![codecov](https://codecov.io/gh/write-for-christ/fs-array/badge.svg?branch=master)](https://codecov.io/gh/write-for-christ/fs-array?branch=master)
+# fs-array [![Build Status](https://travis-ci.org/write-for-CHRIST/fs-array.svg?branch=master)](https://travis-ci.org/write-for-CHRIST/fs-array) [![codecov](https://codecov.io/gh/write-for-CHRIST/fs-array/branch/master/graph/badge.svg)](https://codecov.io/gh/write-for-CHRIST/fs-array)
 
 > File system fs with array operation and Promise support.
 
@@ -52,4 +52,4 @@ Callback take first param as `error`, the second is `contents`
 
 ## License
 
-MIT © [write-for-christ](http://writeforchrist.org)
+MIT © [Write For Christ](http://writeforchrist.org)
