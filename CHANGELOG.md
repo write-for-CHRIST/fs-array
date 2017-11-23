@@ -1,5 +1,5 @@
 <a name="0.1.0"></a>
-# 0.1.0 (2017-11-23)
+# [0.1.0](https://github.com/nampdn/fs-array/compare/3aa7b7d...v0.1.0) (2017-11-23)
 
 
 ### Features
