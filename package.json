@@ -60,7 +60,8 @@
   "xo": {
     "space": true,
     "ignores": [
-      "wallaby.js"
+      "wallaby.js",
+      "docs/**"
     ]
   }
 }

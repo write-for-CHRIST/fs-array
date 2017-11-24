@@ -7,7 +7,6 @@ const listFiles = require('./list-files');
 
 /**
  * Read multiple files
- * 
  * @see {@link module:read-files}
  */
 module.exports.readFiles = readFiles;
@@ -17,7 +16,3 @@ module.exports.readFiles = readFiles;
  * @see {@link module:list-files}
  */
 module.exports.listFiles = listFiles;
-// module.exports = {
-//   readFiles,
-//   listFiles
-// };

@@ -13,28 +13,28 @@ const walker = require('async-walk');
  * //   |- file3.json
  * //   |- file4.txt
  * //   |- file5.ini
- * 
+ *
  * const fsArray = require('@write-for-christ/fs-array');
  * fsArray.listFiles('/path/to/directory')
  *   .then(fileList => {
  *      console.log(fileList.length); // => 5
  *   });
- * 
+ *
  * fsArray.listFiles('/path/to/directory', '.json')
  *   .then(fileList => {
  *      console.log(fileList.length); // => 3
  *   });
- * 
+ *
  * fsArray.listFiles('/path/to/directory', '.txt')
  *   .then(fileList => {
  *      console.log(fileList.length); // => 1
  *   });
- * 
+ *
  * @param {string} p Path to directory to list file.
  * @param {string} [ext] File extension. Default: .json
  * @return {Promise<Array<string>>}
  */
-module.exports = listFiles = async (p, ext) => {
+module.exports = async (p, ext) => {
   try {
     let files = await walker(p);
     if (ext) {

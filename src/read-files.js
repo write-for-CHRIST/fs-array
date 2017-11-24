@@ -15,12 +15,12 @@ const isArray = require('is-array');
  *      .then(contents => {
  *        console.log(contents.length); // 2
  *      });
- * 
+ *
  * @param {Array<string>} fileList Array of absolute path to read
  * @param {string} [encoding=utf8] Encoding when read. Default: 'utf8'
  * @param {Function} [callback] Callback if you prefer it than Promise
  */
-module.exports = readFiles = (fileList, encoding = 'utf8', callback) => {
+module.exports = (fileList, encoding = 'utf8', callback) => {
   if (typeof encoding !== 'string') {
     callback = encoding;
     encoding = 'utf8';

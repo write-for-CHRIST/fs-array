@@ -17,7 +17,6 @@ test('readFiles async', async t => {
 });
 
 test.cb('readFiles callback', t => {
-  const testPath = path.join(__dirname, '../mock');
   m.readFiles(mockFiles, (error, data) => {
     t.is(data.length, 3);
     t.end();
