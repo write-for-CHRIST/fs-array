@@ -1,6 +1,6 @@
 {
   "name": "@write-for-christ/fs-array",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "File system fs with array operation and Promise support.",
   "license": "MIT",
   "repository": "nampdn/fs-array",
