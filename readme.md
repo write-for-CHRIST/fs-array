@@ -15,15 +15,16 @@ const fsArray = require('@write-for-christ/fs-array');
 
 // Promise way
 fsArray
-  .readArray(['/path/to/file1.json', '/path/to/file2.json'])
+  .readFiles(['/path/to/file1.json', '/path/to/file2.json'], 'utf8')
   .then(contents => {
     console.log(contents.length); //=> 2
   })
   .catch(err => console.error(err));
 
 // Callback way
-fsArray.readArray(
+fsArray.readFiles(
   ['/path/to/file1.json', '/path/to/file2.json'],
+  'utf8',
   (err, contents) => {
     if (err) {
       console.error(err);
@@ -31,18 +32,29 @@ fsArray.readArray(
       console.log(contents.length); //=> 2
     }
   }
-);
+
+// List file
+fsArray.readFiles('path/to/directory', '.json').
+  then(fileList => {
+    console.log(fileList);
+  });
 ```
 
 ## API
 
-### readArray(fileList, [callback])
+### readFiles(fileList [, encoding] [, callback])
 
 #### fileList
 
 Type: `Array<string>`
 
 List of absolute files path to read.
+
+#### encoding
+
+Type: `string`
+
+Encoding when read each file.
 
 #### callback
 
