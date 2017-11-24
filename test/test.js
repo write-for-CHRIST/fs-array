@@ -2,32 +2,31 @@ const path = require('path');
 const test = require('ava');
 const m = require('../src');
 
-test('readArray', async t => {
-  const testPath = path.join(__dirname, '../src');
-  const contents = await m.readArray([
-    path.join(testPath, 'index.js'),
-    path.join(testPath, 'fs-read-array.js')
-  ]);
+const testPath = path.join(__dirname, '../mock');
+const mockFiles = [
+  path.join(testPath, 'file1.json'),
+  path.join(testPath, 'file2.json'),
+  path.join(testPath, 'file3.json')
+];
 
-  t.is(contents.length, 2);
-  await t.throws(m.readArray('not array path'), 'Not an array');
-  await t.throws(m.readArray([path.join(testPath, 'notexist.js')]));
+test('readFiles async', async t => {
+  const contents = await m.readFiles(mockFiles, 'utf8');
+  t.is(contents.length, 3);
+  await t.throws(m.readFiles('not array path', 'utf8'), 'Not an array');
+  await t.throws(m.readFiles([path.join(testPath, 'notexist.js')], 'utf8'));
 });
 
-test.cb('readArray callback', t => {
-  const testPath = path.join(__dirname, '../src');
-  m.readArray(
-    [path.join(testPath, 'index.js'), path.join(testPath, 'fs-read-array.js')],
-    (error, data) => {
-      t.is(data.length, 2);
-      t.end();
-    }
-  ); /* ?. */
+test.cb('readFiles callback', t => {
+  const testPath = path.join(__dirname, '../mock');
+  m.readFiles(mockFiles, (error, data) => {
+    t.is(data.length, 3);
+    t.end();
+  }); /* ?. */
 });
 
-test.cb('readArray callback error', t => {
+test.cb('readFiles callback error', t => {
   m
-    .readArray('not array path', (error, data) => {
+    .readFiles('not array path', (error, data) => {
       t.is(error.message, 'Not an array');
       t.is(data, null);
       t.end();
@@ -36,4 +35,16 @@ test.cb('readArray callback error', t => {
       t.throws(err);
       t.end();
     });
+});
+
+test('listFiles', async t => {
+  const fileList = await m.listFiles(testPath);
+  t.is(fileList.length, 5);
+  t.true(fileList[0].endsWith('file1.json'));
+});
+
+test('listFiles with extension', async t => {
+  t.is((await m.listFiles(testPath, '.json')).length, 3);
+  t.is((await m.listFiles(testPath, '.txt')).length, 1);
+  t.is((await m.listFiles(testPath, '.ini')).length, 1);
 });

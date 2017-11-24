@@ -1,6 +1,6 @@
 module.exports = wallaby => {
   return {
-    files: ['src/**/*.js'],
+    files: ['src/**/*.js', 'mock/**/*.*'],
     tests: ['test/**/*.js'],
     testFramework: 'ava',
     env: {
